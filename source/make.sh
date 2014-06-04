@@ -10,3 +10,5 @@ php process.php templates/api.objectdb.tpl ../
 php process.php templates/api.odbconnection.tpl ../
 php process.php templates/api.odbobject.tpl ../
 php process.php templates/api.odbexception.tpl ../
+
+php process.php templates/userpostit.tpl ../

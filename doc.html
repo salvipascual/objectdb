@@ -373,7 +373,7 @@ class teacher extends ODBObject{
 </pre>
 
 		<h2>Define a relationship between two objects</h2>
-		<p>The method <i>addRelation</i> of the <i>ODBObject</i> class defines a relationship between two objects. An object of the <i>ODBObject</i> type must be passed as parameter to this method, existing in the database (it must be saved before) and which had previously created a relation table. If any of the objects, which are tried to connect, does not exist in the database, an exception <i>ODBEObjectNotInDatabase</i> is thrown; as objectDB policy does not save objects without the direct request of the developer. Below is an example of how to relate two objects, <i>student</i> and <i>teacher</i> type, defined previously. To download the same code, you can access <a href="downloads/add.relation.zip">this link</a>.</p>
+		<p>The method <i>addRelation</i> of the <i>ODBObject</i> class defines a relationship between two objects. An object of the <i>ODBObject</i> type must be passed as parameter to this method, existing in the database (it must be saved before) and which had previously created a relation table. If any of the objects, which are tried to connect, does not exist in the database, an exception <i>ODBEObjectNotInDatabase</i> is thrown; as objectDB policy does not save objects without the direct request of the developer. Below is an example of how to relate two objects, <i>student</i> and <i>teacher</i> type, defined previously. To download the same code, you can access <a href="https://github.com/salvipascual/objectdb/archive/example-add.relation.zip">this link</a>.</p>
 
 <pre class="sh_php">
 require_once &quot;../objectDB/objectDB-mysql-v3.0.php&quot;; // this will include first

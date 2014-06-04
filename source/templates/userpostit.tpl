@@ -48,7 +48,7 @@
 		
 		<div id="content">
 				<h1>Last 20 user's post-it</h1>
-				<p>Those are the 20 last post-it inserted by users. When you become tired of read, follow next link to the <a href="index.php">index page	</a> of ObjectDB official website.</p>
+				<p>Those are the 20 last post-it inserted by users. When you become tired of read, follow next link to the <a href="index.html">index page	</a> of ObjectDB official website.</p>
 			{ignore}<?php
 				require_once "../objectdb/objectDB-mysql-v3.0.php";
 				require_once "../postit.php";

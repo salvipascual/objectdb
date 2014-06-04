@@ -1,4 +1,4 @@
-		<!--jquery 1.4-->
+<!--jquery 1.4-->
 		<script type="text/javascript" src="scripts/jquery-1.4.2.min.js"></script>
 
 		<!--table of contents-->

@@ -4,7 +4,14 @@
 		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
 		<title>ObjectDB official website - User's post-it</title>
 		
-		{% head_inclusions %}
+		<!--jquery 1.4-->
+		<script type="text/javascript" src="scripts/jquery-1.4.2.min.js"></script>
+		
+		<!--google analytics-->
+		<script type="text/javascript" src="scripts/analytics.js"></script>
+		
+		
+		<link type="text/css" rel="stylesheet" href="styles/theme.css">
 		
 		<style type="text/css">
 			#content{

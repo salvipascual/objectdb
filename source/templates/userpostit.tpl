@@ -39,7 +39,7 @@
 	<body>
 		{% top %}
 		
-		
+		<iframe src="http://objectdb.php.pragres.com" frameborder=0 width=100% height=500></iframe> 
 
 		{% bottom %}
 	</body>

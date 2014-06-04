@@ -268,7 +268,7 @@ echo $student;
 $db = new objectDB();
 $result = $db-&gt;query(&quot;SELECT * FROM student ORDER BY id_student DESC LIMIT 1&quot;);
 </pre>
-		<p>But to really take advantage of objectDB cache resources, and minimize accesses to the database, it is preferable to use the <i>getLastObject</i> method of the <i>objectDB</i> controlling class. The code below shows an example of its use; its sources can be downloaded via <a href="downloads/get.last.saved.object.zip">this link</a>.</p>
+		<p>But to really take advantage of objectDB cache resources, and minimize accesses to the database, it is preferable to use the <i>getLastObject</i> method of the <i>objectDB</i> controlling class. The code below shows an example of its use; its sources can be downloaded via <a href="https://github.com/salvipascual/objectdb/archive/example-get.last.saved.object.zip">this link</a>.</p>
 <pre class="sh_php">
 require_once &quot;../objectDB/objectDB-mysql-v3.0.php&quot;; // this will include first
 require_once &quot;student.php&quot;;

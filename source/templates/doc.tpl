@@ -183,7 +183,7 @@ $students_list = $db-&gt;query(&quot;SELECT * FROM student WHERE age&gt;'25' AND
 echo 'List of students in database with age&gt;25 and orange as color preference';
 for($i=0; $iquery(&quot;DELETE FROM student WHERE preferences LIKE '%serie=24 hours%' ORDER BY id_student DESC LIMIT 1&quot;);
 </pre>
-		<p>Note  that for the case of SELECT type queries the method returns an array of objects  (such as the method <i>getObjs</i>); for  queries unanswered, such as DELETE, INSERT, etc. the method returns NULL. To  download the code for this example, visit <a href="downloads/send.query.zip">this link</a></p>
+		<p>Note  that for the case of SELECT type queries the method returns an array of objects  (such as the method <i>getObjs</i>); for  queries unanswered, such as DELETE, INSERT, etc. the method returns NULL. To  download the code for this example, visit <a href="https://github.com/salvipascual/objectdb/archive/example-send.query.zip">this link</a></p>
 
 		
 		<h2>Modify saved objects</h2>

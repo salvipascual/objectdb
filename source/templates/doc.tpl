@@ -253,7 +253,7 @@ $db-&gt;removeObj($students_list[1]);
 
 
 		<h2>Removing multiple objects of the database</h2>
-		<p>By using the ways discussed above a single object can be deleted by a reference to it. This is inefficient if the purpose consists in deleting all entries in a table, or many entries that satisfy a given condition. For that objectDB provides the <i>remove</i> method, located in the controlling class <i>objectDB</i>, which should be given as parameters the name of the table on which to act and an optional expression in SQL language to filter the removal. Failure to pass this expression to <i>remove</i> method, it will delete all such stored objects in the database. The code below details this behavior; use <a href="downloads/multiple.delete.zip">this link</a> to download it.</p>
+		<p>By using the ways discussed above a single object can be deleted by a reference to it. This is inefficient if the purpose consists in deleting all entries in a table, or many entries that satisfy a given condition. For that objectDB provides the <i>remove</i> method, located in the controlling class <i>objectDB</i>, which should be given as parameters the name of the table on which to act and an optional expression in SQL language to filter the removal. Failure to pass this expression to <i>remove</i> method, it will delete all such stored objects in the database. The code below details this behavior; use <a href="https://github.com/salvipascual/objectdb/archive/example-multiple.delete.zip">this link</a> to download it.</p>
 
 <pre class="sh_php">
 require_once &quot;../objectDB/objectDB-mysql-v3.0.php&quot;; // this will include first

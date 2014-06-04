@@ -2,3 +2,78 @@ February 13, 2011
 	- Released ObjectDB.mysql-v3.2
 	- Bug retrieving and storing data in Ubuntu 10 Linux was corrected
 	- getPublicProperties method added to ODBObject class
+
+March 12, 2011
+	- Relased ObjectDB-4.0
+	- Multi-database architecture (MySQL & PostgreSQL)
+	- Database configuration in external file
+	- Add a constructor for ODBObject
+    - Set object's properties in constructor
+	- Save objects in ODBObject's constructor
+	- Create tables based on ODBObject's instances
+
+March 24, 2011
+    - More utility for objectDB::getObjs(). More parametres was added for sql options.
+    - Update:
+         ODBConnectionMySQL::query()
+         ODBConnectionPgSQL::query()
+    - Add:
+        objectDB::getConnection() for one instance of databse connection
+        objectDB::getLengthOf() for return a number of rows
+
+March 25, 2011
+    - Remove ODBConfiguration Script
+    - Add:
+        objectDB::connect($url);
+    - Connection to database via URL. Removed ODBConfiguration file.
+    - Fix somes bugs
+    - Convert objectDB in abstract class
+
+March 26, 2011
+    - Multiple types for object's id: autoincrement and uniqueid
+    - Add:
+        objectDB::drop()
+        objectDB::dropIfExists()
+
+April 21, 2011, 14:24
+- Optimization of ODBObject::setDataFromArray
+  The cicle 
+	... foreach ($this->getPublicProperties() as $key => $value) { ...
+  was changed by
+        ...
+        $public_prop = $this->getPublicProperties();
+        foreach ($public_prop as $key => $value) {
+        ...
+  for most performance.
+- Optimization of ODBObject::save
+  -- similar as ODBObject::setDataFromArray
+- Fix bug of method ODBObject::save
+   Code:
+        if ($this->isSaved()) { // update object
+            $sql = "UPDATE " . $this->getTableName() . " SET ";
+            foreach ($this->getPublicProperties() as $key => $value)
+                $sql .= "$key='$value', ";
+
+            $where = " WHERE {$this->getTableKeyName()} = {$this->getSQLIdValue()} ";
+        }
+   Replace with:
+        if ($this->isSaved()) { // update object
+            $sql = "UPDATE " . $this->getTableName() . " SET ";
+            $i = 1;
+            foreach ($public_properties as $key => $value)
+                $sql .= (($i++ > 1)?",":"")."$key='$value' ";
+
+            $sql .= " WHERE {$this->getTableKeyName()} = {$this->getId()} ";
+        }
+
+  Now, SQL code are correct!
+  
+August 17, 2011, 18:30
+- Create a new Driver for MSSQL connectivity
+- Somes part of code are fixing for the new driver for mssql.
+- A new parameter are added for ODBConnection::query() called $tbname because in the
+	php_mssql extension are not present the function mssql_field_table, similar to 
+	mysql_field_table and pg_field_table. Now, the table name is $tbname parameter, 
+	with this parameter we implemented an abstract functionlity for the programmers.
+	 
+	 

@@ -187,7 +187,7 @@ for($i=0; $iquery(&quot;DELETE FROM student WHERE preferences LIKE '%serie=24 ho
 
 		
 		<h2>Modify saved objects</h2>
-		<p>When  an object is saved in the database, its value can be uploaded and changed. This  is necessary to obtain the object by using the <i>getObjs</i> function  of the <i>objectDB</i> controlling  class (exemplified in the previous section), change their values and save it  again by using the <i>save</i> function  of the <i>ODBObject</i> class  (also shown in the previous section) or by <i>saveObj</i> function  of the <i>objectDB</i> controlling  class. The code then takes place due to the use of this latter form, not  illustrated previously and continues the previous example. To download the  source files of this example, you can visit <a href="downloads/modify.objects.zip">this link</a>.</p>
+		<p>When  an object is saved in the database, its value can be uploaded and changed. This  is necessary to obtain the object by using the <i>getObjs</i> function  of the <i>objectDB</i> controlling  class (exemplified in the previous section), change their values and save it  again by using the <i>save</i> function  of the <i>ODBObject</i> class  (also shown in the previous section) or by <i>saveObj</i> function  of the <i>objectDB</i> controlling  class. The code then takes place due to the use of this latter form, not  illustrated previously and continues the previous example. To download the  source files of this example, you can visit <a href="https://github.com/salvipascual/objectdb/archive/example-modify.objects.zip">this link</a>.</p>
 
 <pre class="sh_php">
 require_once &quot;../objectDB/objectDB-mysql-v3.0.php&quot;; // this will include first

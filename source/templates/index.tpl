@@ -40,12 +40,12 @@
 
 				// ajax request of post-it save
 				$.get(
-					'WEB-INF/src/savepostit.php?text='+text.value,
+					'http://objectdb.php.pragres.com/savepostit.php?text='+text.value,
 					function (xml){
 						if(xml != 1)
 							$('#errormsg').html("An unexpected problem occur and your post-it cannot be sticked; please try later and conctact me if problem persist");
 						else{
-							$('#replymsg').html('Your post-it was succefully sticked, visit <a href="userpostit.php">this</a> link for read other user commentaries');
+							$('#replymsg').html('Your post-it was succefully sticked, visit <a href="http://objectdb.php.pragres.com/userpostit.php">this</a> link for read other user commentaries');
 							text.value = "";
 							$('div#post-it span').html('0/250 - ');
 						}						
@@ -66,13 +66,13 @@
 			<p>ObjectDB is designed to reduce work to a minimum. In use, tedious operations such as creating relationships between tables  and finding the last inserted tuple, become routine and use a few lines of  code. Although it might be thought that the work  of an extra layer of abstraction slows down the application, caching mechanisms  of objectDB avoid redundant operations and streamline the work so that no  visible notice of time delays.</p>
 		
 			<h1>Quick download</h1>
-			<a href="downloads/core/objectdb.v4.0.zip" title="Download the last version of ObjectDB (670 kb)" alt="objectdb.v4.0.zip">
+			<a href="https://github.com/salvipascual/objectdb/archive/v4.0.zip" title="Download the last version of ObjectDB (670 kb)" alt="objectdb.v4.0.zip">
 				<img class="menuelement" style="float:left; margin:0px 30px 0px 0px; width:170px;" src="images/quickdownload.png" />
 			</a>
 			<p>Get the last version of objectDB with just one click. For more download options, please visit the <a href="download.html">download page</a>. ObjectBD is free for download and use, but if you think it is a great software, please consider a minimal <a href="donate.html">monetary contribution</a> for project's livelihood.</p>
 
 			<h1>Leave a post-it</h1>		
-			<p>Please, leave a small commentary for next visitors. It's not necessary to type your real name, nickname or e-mail, but it will be nice. I will delete any post-it consider offensive or inmoral; the maximum number of characters per post-it is 250. Of course the engine for data access behind this page is ObjectDB! For read user's post-it, follow <a href="userpostit.html">this</a> link.</p>
+			<p>Please, leave a small commentary for next visitors. It's not necessary to type your real name, nickname or e-mail, but it will be nice. I will delete any post-it consider offensive or inmoral; the maximum number of characters per post-it is 250. Of course the engine for data access behind this page is ObjectDB! For read user's post-it, follow <a href="http://objectdb.php.pragres.com/userpostit.php">this</a> link.</p>
 			<p id="errormsg"></p><p id="replymsg"></p>
 			<div id="post-it" style="background-image: url('images/post-it1.png');">
 				<textarea id="outputtext">Please type your note here...</textarea><br/>

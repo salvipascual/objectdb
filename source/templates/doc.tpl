@@ -432,7 +432,7 @@ $student-&gt;removeRelation($teacher); // same than: $teacher-&gt;removeRelation
 
 
 		<h2>Destroy all relations of an object</h2>
-		<p>On several occasions it is necessary to deprive an object of all their relationships. Clear examples of this need are when a customer buys the entire stock of a product at an online store, or before dismissing a teacher it is required to delete all relationships he holds with his students. The method <i>removeAllRelations</i> accomplishes this work. The last case can be described in the code example below. You can also download the source code using <a href="downloads/delete.all.relations.zip">this link</a>.</p>
+		<p>On several occasions it is necessary to deprive an object of all their relationships. Clear examples of this need are when a customer buys the entire stock of a product at an online store, or before dismissing a teacher it is required to delete all relationships he holds with his students. The method <i>removeAllRelations</i> accomplishes this work. The last case can be described in the code example below. You can also download the source code using <a href="https://github.com/salvipascual/objectdb/archive/example-delete.all.relations.zip">this link</a>.</p>
 <pre class="sh_php">
 
 require_once &quot;../objectDB/objectDB-mysql-v3.0.php&quot;; // this will include first

@@ -1,0 +1,35 @@
+# ObjectDB Package's Configuration for Ramifip PHP Framework
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+# or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+# for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program as the file LICENSE.txt; if not, please see
+# http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
+# 
+# @author Salvi Pascual <salvi.pascual@pragres.com>
+# @version 4.1
+# @link http://objectdb.pragres.com
+#
+# Sunday, November 04, 2012
+
+id = "objectdb"
+name = "ObjectDB"
+description = "A Object Relational Mapper for PHP 5"
+version = 4.1
+
+# Autoload this classes
+autouse[] = "IODBConnection: com/pragres/objectdb/lib/IODBConnection"
+autouse[] = "ODBConnectionPgSQL: com/pragres/objectdb/drivers/ODBConnectionPgSQL"
+autouse[] = "ODBConnectionMySQL: com/pragres/objectdb/drivers/ODBConnectionMySQL"
+autouse[] = "ODBConnectionMSSQL: com/pragres/objectdb/drivers/ODBConnectionMySQL"
+autouse[] = "ODBException: com/pragres/objectdb/lib/ODBException"
+autouse[] = "ODBConnection: com/pragres/objectdb/lib/ODBConnection"
+autouse[] = "ODBObject: com/pragres/objectdb/lib/ODBObject"
+autouse[] = "objectDB: com/pragres/objectdb/lib/objectDB"

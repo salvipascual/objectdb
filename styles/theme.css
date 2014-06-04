@@ -1,0 +1,148 @@
+body{
+	background-color: black;
+	padding: 0px;
+}
+
+p{
+	padding-right: 60px;
+	text-align: justify;
+	font-family: Arial;
+}
+
+ul, dl{ 
+	font-family: Arial;
+}
+
+h1{
+	font-family: Bradley Hand ITC;
+	font-size: 32pt;
+	font-weight: bold;
+}
+
+h2{
+	font-family: Bradley Hand ITC;
+	font-size: 20pt;
+	text-transform: italic;
+}
+
+.left-indent{
+	padding-left: 30px;
+}
+
+.right-indent{
+	padding-right: 10px;
+}
+
+.center{
+	text-align: center;
+}
+
+/*  logo  */
+
+#logo{
+	margin: 50px 0px -30px 50px; 
+	background-image: url('../images/objectdb-imagotype.png');
+	background-repeat: no-repeat;
+	padding: 0px 0px 0px 70px ;
+}
+
+#logo #name{
+	font-family: Bradley Hand ITC;
+}
+
+#logo #banner{
+	font-style: italic;
+	position: relative;
+	bottom: 40px;
+	left: 30px;
+	width: 200px;
+}
+
+
+/*  menu  */
+
+#menu {
+	float: right;
+	margin: 15px 10px 0px 0px; 
+	text-align: center;
+	font-family: Bradley Hand ITC;
+}
+
+.menuelement{
+	margin: 0px 10px 0px 10px;
+	cursor: pointer;
+	color: black;
+}
+
+#menutitle{
+	font-family: Bradley Hand ITC;
+	text-align: right;
+	vertical-align: top;
+	height: 30px;
+}
+
+/*  post-it  */
+
+div#post-it{
+	height: 320px;
+	width: 400px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	text-align: center;
+}
+
+div#post-it textarea{
+	width: 210px;
+	height: 180px;
+	background-color: transparent;
+	border: 0px;
+	margin: 70px 0px 5px 0px;
+}
+
+.separation{
+	margin-bottom: 20px;
+}
+
+#errormsg{
+	color: red;
+}
+
+#replymsg{
+	color: green;
+}
+
+#top{
+	background-image: url('../images/papel-rasgado-top.png');
+	background-color: black;
+	background-repeat: repeat-x;
+	background-position: center bottom;
+	color: white;
+
+	padding-bottom: 60px;
+	padding-top: 20px;
+}
+
+#content{
+	background-color: white;
+	border: 1px solid transparent;
+}
+
+.content{
+	background-color: white;
+	border: 1px solid transparent;
+}
+
+.download-table th, .download-table td {
+	border:1px solid black;
+	padding: 5px;
+}
+
+#bottom{
+	background-image: url('../images/papel-rasgado-bottom.png');
+	background-color: black;
+	background-repeat: repeat-x;
+	background-position: center top;
+	color: white;
+	padding-top: 60px;
+	padding-bottom: 20px;
+}

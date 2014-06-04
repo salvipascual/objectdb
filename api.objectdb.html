@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+		<title>ObjectDB official website - API</title>
+
+				<!--jquery 1.4-->
+		<script type="text/javascript" src="scripts/jquery-1.4.2.min.js"></script>
+
+		<!--table of contents-->
+		<script type="text/javascript" src="scripts/toc/toc.js"></script>
+		<link rel="stylesheet" href="styles/toc.css" />
+
+		<!--code highlight-->
+		<script type="text/javascript" src="scripts/shjs/sh_main.min.js"></script>
+		<script type="text/javascript" src="scripts/shjs/lang/sh_sql.min.js"></script>
+		<script type="text/javascript" src="scripts/shjs/lang/sh_php.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="styles/sh_emacs.min.css">
+		
+		<!--page functionality-->
+		<script type="text/javascript" src="scripts/load.js"></script>
+		
+		<!--google analytics-->
+		<script type="text/javascript" src="scripts/analytics.js"></script>
+		
+		<link type="text/css" rel="stylesheet" href="styles/theme.css">
+
+		
+	</head>
+	<body>
+		<div id="top" class="left-indent">
+	<table id="menu" border="0">
+		<tr>
+			<td colspan="6" id="menutitle">Select a menu element to begin</td>
+		</tr>
+		<tr>
+			<td><a class="menuelement" href="index.html"><img src="images/home.png" title="Go to start page"/></a></td>
+			<td><a class="menuelement" href="doc.html"><img src="images/help.png" title="Read documentation, start with objectBD from cero"/></a></td>
+			<td><a class="menuelement" href="api.odbexception.html"><img src="images/api.png" title="Consult API for reference"/></a></td>
+			<td><a class="menuelement" href="download.html"><img src="images/download.png" title="Freely download objectDB"/></a></td>
+			<td><a class="menuelement" href="about.html"><img src="images/about.png" title="About me and contact"/></a></td>
+			<td><a class="menuelement" href="donate.html"><img src="images/donate.png" title="Please consider a minimal donation for project's livelihood"/></a></td>
+		</tr>
+		<tr>
+			<td>Home</td>
+			<td>Documentation</td>
+			<td>API</td>
+			<td>Download</td>
+			<td>Contact</td>
+			<td>Donate</td>
+		</tr>
+	</table>
+
+	<div id="logo">
+		<h1 id="name">ObjectDB</h1>
+		<p id="banner">simple as write in paper</p>
+	</div>
+</div>
+
+
+		<div class="left-indent right-indent content">
+	<h1>Choose one below for API information</h1>
+	<dl style="margin-bottom:40px; padding-bottom:50px; border-bottom:1px dashed black;">
+		<dt>Class <a href="api.odbexception.html">ODBException</a></dt>
+			<dd>For exeption control in ObjectDB</dd>
+		<dt>Class <a href="api.odbconnection.html">ODBConnection</a></dt>
+			<dd>Connection configuration and low level work</dd>				
+		<dt>Class <a href="api.odbobject.html">ODBObject</a></dt>
+			<dd>Contains the base information and basic ObjectDB's functionality</dd>				
+		<dt>Class <a href="api.objectdb.html">objectDB</a></dt>
+			<dd>Controller class and more librery's functionality</dd>
+	</dl>
+</div>
+
+
+		<div id="content" class="left-indent right-indent">
+			<h1>objectDB</h1>
+			<p>The class shown below defines the <i>objectDB</i> object; it executes the main functions for the library. This class cannot be instantiated more than once, or an exception of the <i>ODBEMoreThanOneInstance</i> type will be generated..</p>
+			
+<pre class="sh_php">
+class objectDB{
+	public function objectDB();
+	public function query($sql);
+	public function getObjs($tbName,$where=&quot;&quot;);
+	public function saveObj($object);
+	public function removeObj($object);
+	public function remove($tbName,$where=&quot;&quot;);
+	public function getLastObject($tbName);
+}
+</pre>
+
+		  <h2>Constructor</h2>
+			<p>This class follows the design pattern &quot;Singletton&quot;, so it should not be instantiated more than once. It will generate an exception of the <i>ODBEMoreThanOneInstance</i> type otherwise.</p>
+<dl>
+				<dt>Parameters</dt>
+	<dd>none</dd>
+
+				<dt>Exceptions</dt>
+					<dd>ODBEMoreThanOneInstance: it is thrown if the intention of building more than one instance occurs</dd>
+			</dl>
+
+
+		  <h2>query()</h2>
+			<p>It executes a query, whether it is a SELECT, returns a list of objects, otherwise it returns NULL.</p>
+			<dl>
+
+				<dt>Return type</dt>
+					<dd>Array | NULL</dd>
+				<dt>Parameters</dt>
+			  <dd>String: a valid query</dd>
+				<dt>Exceptions</dt>
+					<dd>ODBEWrongSQLSentence: it is thrown if he SQL statement is incorrect.</dd>
+			</dl>
+
+
+		  <h2>getObjs()</h2>
+			<p>It gets a list of objects to filter, given the name of the table and a SQL expression. Used for obtaining the entire table, the second parameter must be blank.</p>
+			<dl>
+				<dt>Return type</dt>
+					<dd>Array: list of objects</dd>
+
+				<dt>Parameters</dt>
+			  <dd>String: name of the table from which the objects will be taken.</dd>
+					<dd>String: expression in SQL language to filter the results (eg: id_table = '24 ').</dd>
+				<dt>Exceptions</dt>
+					<dd>ODBETableNotDefined: it is thrown in the case of using an undefined table</dd>
+					<dd>ODBEWrongSQLSentence: it is thrown if the SQL statement is incorrect</dd>
+			</dl>
+
+
+		  <h2>saveObj()</h2>
+			<p>It saves or replaces an object in the database.</p>
+			<dl>
+				<dt>Return type</dt>
+					<dd>none</dd>
+
+				<dt>Parameters</dt>
+			  <dd>ODBObject: not saved object for saving or replacing.</dd>
+				<dt>Exceptions</dt>
+					<dd>ODBEObjectNotExist: it is thrown if a deleted or nonexistent object is used.</dd>
+			</dl>
+
+
+		  <h2>removeObj()</h2>
+
+			<p>It deletes an object from the database.</p>
+			<dl>
+				<dt>Return type</dt>
+					<dd>Boolean: TRUE if it is deleted, otherwise it throws exceptions.</dd>
+				<dt>Parameters</dt>
+			  <dd>ODBObject: object to remove</dd>
+
+				<dt>Exceptions</dt>
+					<dd>ODBEObjectNotInDatabase: it is thrown whether the object to remove does not exist in the database</dd>
+					<dd>ODBEObjectNotExist: it is thrown if a deleted or nonexistent object is used</dd>
+			</dl>
+
+			
+		  <h2>remove()</h2>
+			<p>It deletes a list of objects given the name of the table and a SQL expression to filter.</p>
+
+			<dl>
+				<dt>Return type</dt>
+					<dd>none</dd>
+				<dt>Parameters</dt>
+					<dd>String: name of the table from which objects will be deleted</dd>
+					<dd>String: expression in SQL language to filter the results (eg: id_table &lt;= '24 ')</dd>
+
+				<dt>Exceptions</dt>
+					<dd>ODBETableNotDefined: it is thrown in the case of using an undefined table</dd>
+					<dd>ODBEWrongSQLSentence: it is thrown when the SQL statement is incorrect</dd>
+			</dl>
+
+			
+		  <h2>getLastObject()</h2>
+			<p>It gets the last saved object in a table.</p>
+
+			<dl>
+				<dt>Return type</dt>
+					<dd>ODBObject: last saved object</dd>
+				<dt>Parameters</dt>
+					<dd>String: name of the table from which to obtain the latest saved object</dd>
+				<dt>Exceptions</dt>
+
+					<dd>ODBETableNotDefined: it is thrown in the case of using an undefined table</dd>
+			</dl>
+		</div>
+
+		<div id="bottom" class="left-indent center">
+	<a href="http://validator.w3.org/check?uri=referer">
+		<img style="border:0;width:88px;height:31px" src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Transitional" height="31" width="88" />
+	</a>
+	<a href="http://jigsaw.w3.org/css-validator/check/referer">
+		<img style="border:0;width:88px;height:31px" src="http://www.w3.org/Icons/valid-css2-blue" alt="Valid CSS!" />
+	</a>
+</div>
+	</body>
+</html>

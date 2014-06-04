@@ -7,11 +7,11 @@
 	class ODBConnection {
 
 		/* start - configure */
-		static public $host   = "localhost";
+		static public $host   = "salvipascualdb";
 		static public $port   = "3306";
-		static public $dbname = "test";
+		static public $dbname = "objectdb";
 		static public $user   = "root";
-		static public $pass   = "root";
+		static public $pass   = "UncleSalviAdventures";
 		/* end - configure */
 
 		public $connect = null;

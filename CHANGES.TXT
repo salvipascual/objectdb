@@ -1,0 +1,4 @@
+February 13, 2011
+	- Released ObjectDB.mysql-v3.2
+	- Bug retrieving and storing data in Ubuntu 10 Linux was corrected
+	- getPublicProperties method added to ODBObject class

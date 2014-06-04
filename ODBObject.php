@@ -60,7 +60,7 @@
 		public function setDataFromArray($data){
 			if($this->getState() == OBJECT_DELETED) throw new ODBEObjectNotExist();
 
-			foreach($this as $key=>$value) {
+			foreach($this->getPublicProperties() as $key=>$value) {
 				$element = each($data); // for make it work with ASSOCIATIVE arrays
 				$this->$key = $element['value'];
 			}
@@ -70,7 +70,7 @@
 		name: setDataFromParamsList
 		overview: fill this object with a list of parameters
 		params: 
-			Array; object values, order as in database 
+			Params; object values, order as in database 
 		returns: 
 			none
 		exceptions:
@@ -80,7 +80,7 @@
 			if($this->getState() == OBJECT_DELETED) throw new ODBEObjectNotExist();
 
 			$i=0; $args = func_get_args();	
-			foreach($this as $key=>$value){
+			foreach($this->getPublicProperties() as $key=>$value){
 				$this->$key = $args[$i++];
 			}
 		}
@@ -145,6 +145,21 @@
 		}
 
 		/*
+		name: getPublicProperties
+		overview: get the user entries properties for this clase
+		params: 
+			none
+		returns: 
+			Array; name of properties entry by user
+		exceptions:
+			none
+		*/	
+		public function getPublicProperties(){
+			$getFields = create_function('$obj', 'return get_object_vars($obj);');
+			return $getFields($this);
+		}
+
+		/*
 		name: isSaved
 		overview: specify if object is in database
 		params: 
@@ -173,11 +188,11 @@
 
 			if($this->isSaved()) { // update object
 				$sql = "UPDATE ".$this->getTableName()." SET "; 
-				foreach($this as $key=>$value) $sql .= "$key='$value', ";
+				foreach($this->getPublicProperties() as $key=>$value) $sql .= "$key='$value', ";
 				$where = " WHERE ".$this->getTableKeyName()."='".$this->id."'";
 			}else{ // create a new object
 				$sql = "INSERT INTO ".$this->getTableName()." SET ";
-				foreach($this as $key=>$value) $sql .= "$key='$value', ";
+				foreach($this->getPublicProperties() as $key=>$value) $sql .= "$key='$value', ";
 			}
 			$sql = substr_replace($sql,$where,strrpos($sql,","));
 
@@ -323,8 +338,9 @@
 			if($this->getState() == OBJECT_DELETED) throw new ODBEObjectNotExist();
 
 			$header='<th>'.$this->getTableKeyName().'</th>'; 
-			$body='<td>'.$this->getId().'</td>'; 	
-			foreach($this as $key=>$value) {
+			$body='<td>'.$this->getId().'</td>'; 
+
+			foreach($this->getPublicProperties() as $key=>$value) {
 				$header .= "<th>$key</th>";
 				$body .= "<td>$value</td>";
 			}
